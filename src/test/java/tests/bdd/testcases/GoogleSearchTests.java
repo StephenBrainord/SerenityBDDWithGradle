@@ -26,7 +26,7 @@ public class GoogleSearchTests {
     @Title("Performing Google Search!!!")
     @Test
     public void basicGoogleSearch() throws IOException {
-        String keyword = "Cucumber";
+        String keyword = "SerenityBDD";
         googleSearchPageSteps.openGoogleSearch();
         googleSearchPageSteps.performGoogleSearchForKeyword(keyword);
         googleSearchResultsPageSteps.googleSearchResultsShouldMatch(keyword);

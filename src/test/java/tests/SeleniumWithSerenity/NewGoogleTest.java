@@ -23,14 +23,14 @@ public class NewGoogleTest extends PageObject {
 
         open();
         getDriver().manage().window().maximize();
-        $("//input[@name='q']").sendKeys("Cucumber");
+        $("//input[@name='q']").sendKeys("Serenity");
         setImplicitTimeout(10, ChronoUnit.SECONDS);
         $("//input[@value='Google Search']").click();
-        boolean checkSearch = $("//h3[1]").getText().contains("Cucumber");
+        boolean checkSearch = $("//h3[1]").getText().contains("Serenity");
         if(checkSearch) {
-            System.out.println("Search results match with keyword Cucumber");
+            System.out.println("Search results match with keyword Serenity");
         } else {
-            System.out.println("Search results does not match with keyword Cucumber");
+            System.out.println("Search results does not match with keyword Serenity");
         }
     }
 }

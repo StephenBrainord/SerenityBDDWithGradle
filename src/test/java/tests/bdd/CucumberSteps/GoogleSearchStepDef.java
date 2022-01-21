@@ -26,7 +26,7 @@ public class GoogleSearchStepDef {
     }
 
     @Then("I verify google search results are related to {string} keyword")
-    public void i_verify_google_search_results_are_related_to_keyword(String keyword) {
+    public void i_verify_google_search_results_are_related_to_keyword(String keyword) throws IOException {
         googleSearchResultsPageSteps.googleSearchResultsShouldMatch(keyword);
     }
 

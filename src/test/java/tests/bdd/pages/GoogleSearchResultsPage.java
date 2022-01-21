@@ -2,10 +2,12 @@ package tests.bdd.pages;
 
 import base.BasePage;
 
+import java.io.IOException;
+
 public class GoogleSearchResultsPage extends BasePage {
 
-    public boolean verifyFirstSearchResult(String keyword) {
-        System.out.println("Search Page Title is - " + getPageTitle("//h3[1]"));
-        return getPageTitle("//h3[1]").contains(keyword);
+    public boolean verifySearchTitle(String keyword) throws IOException {
+        System.out.println("Search Page Title is - " + getPageTitle());
+        return getPageTitle().contains(keyword);
     }
 }

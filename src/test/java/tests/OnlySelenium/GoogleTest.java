@@ -19,14 +19,14 @@ public class GoogleTest {
 
         driver.manage().window().maximize();
         driver.get("http://www.google.com");
-        driver.findElement(By.name("q")).sendKeys("Cucumber");
+        driver.findElement(By.name("q")).sendKeys("Selenium");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.findElement(By.xpath("//input[@value='Google Search']")).click();
-        boolean checkSearch = driver.findElement(By.xpath("//h3[1]")).getText().contains("Cucumber");
+        boolean checkSearch = driver.findElement(By.xpath("//h3[1]")).getText().contains("Selenium");
         if(!checkSearch) {
-            System.out.println("Search results match with keyword Cucumber");
+            System.out.println("Search results match with keyword Selenium");
         } else {
-            System.out.println("Search results does not match with keyword Cucumber");
+            System.out.println("Search results does not match with keyword Selenium");
         }
         driver.quit();
 
