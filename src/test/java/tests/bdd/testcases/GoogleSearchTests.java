@@ -7,8 +7,10 @@ import net.thucydides.core.annotations.Title;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import tests.bdd.steps.GoogleSearchPageSteps;
-import tests.bdd.steps.GoogleSearchResultsPageSteps;
+import tests.bdd.SerenitySteps.GoogleSearchPageSteps;
+import tests.bdd.SerenitySteps.GoogleSearchResultsPageSteps;
+
+import java.io.IOException;
 
 @RunWith(SerenityRunner.class)
 public class GoogleSearchTests {
@@ -23,11 +25,11 @@ public class GoogleSearchTests {
 
     @Title("Performing Google Search!!!")
     @Test
-    public void basicGoogleSearch() {
+    public void basicGoogleSearch() throws IOException {
         String keyword = "Cucumber";
         googleSearchPageSteps.openGoogleSearch();
         googleSearchPageSteps.performGoogleSearchForKeyword(keyword);
-//        googleSearchResultsPageSteps.googleSearchResultsShouldMatch(keyword);
+        googleSearchResultsPageSteps.googleSearchResultsShouldMatch(keyword);
     }
 
 }

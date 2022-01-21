@@ -1,4 +1,4 @@
-package tests.bdd.steps;
+package tests.bdd.SerenitySteps;
 
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;

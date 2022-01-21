@@ -1,25 +1,20 @@
 package tests.bdd.pages;
 
-import net.serenitybdd.core.pages.PageObject;
-import net.thucydides.core.annotations.DefaultUrl;
 
+import base.BasePage;
+
+import java.io.IOException;
 import java.time.temporal.ChronoUnit;
 
 //@DefaultUrl("http://www.google.com")
-public class GoogleSearchPage extends PageObject {
+public class GoogleSearchPage extends BasePage {
 
-//    public void openGoogleSearchPage() {
-//        open();
-//    }
-
-    public void enterKeywordInGoogleSearchBox(String keyword) {
-//        $("//input[@name='q']").sendKeys(keyword);
-        typeInto($("//input[@name='q']"), keyword);
+    public void enterKeywordInGoogleSearchBox(String keyword) throws IOException {
+        waitAndTypeInto("//input[@name='q']", keyword);
     }
 
-    public void clickGoogleSearchButton() {
+    public void clickGoogleSearchButton() throws IOException {
         setImplicitTimeout(10, ChronoUnit.SECONDS);
-//        $("//input[@value='Google Search']").click();
-        clickOn($("//input[@value='Google Search']"));
+        waitAndClickOn("//input[@value='Google Search']");
     }
 }

@@ -1,14 +1,11 @@
 package tests.bdd.pages;
 
-import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.WithByLocator;
-import net.serenitybdd.core.pages.WithLocator;
-import org.openqa.selenium.By;
+import base.BasePage;
 
-public class GoogleSearchResultsPage extends PageObject {
+public class GoogleSearchResultsPage extends BasePage {
 
     public boolean verifyFirstSearchResult(String keyword) {
-//        System.out.println("Text is - " + textOf("//h3[1]"));
-        return textOf("//h3[1]").contains(keyword);
+        System.out.println("Search Page Title is - " + getPageTitle("//h3[1]"));
+        return getPageTitle("//h3[1]").contains(keyword);
     }
 }
